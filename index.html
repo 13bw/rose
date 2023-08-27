@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROSE</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div>
+        <div id="info-container">
+            <p id="sheep-count">Sheeps: 0</p>
+            <p id="wolf-count">Wolves: 0</p>
+            <p id="death-count">Deaths: 0</p>
+        </div>
+        <div id="canvas-container">
+            <canvas id="canvas" width="600" height="600"></canvas>
+            <div id="entity-info"></div>
+
+            <div id="info-label">
+                <span>Please enter the target number you want to follow.</span><br>
+                <span>Press 'R' to reset the simulation.</span><br>
+                <span>Press 'F' to unlock/readjust the camera.</span><br>
+                <span>Press 'Space' to play/pause the simulation.</span><br><br>
+                <span style="color: red;">Warning: There are no limitations in the config. Please use with moderation.</span><br>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="info">
+        <i class="fas fa-info-circle"></i>
+    </div>
+
+    <div id="buttons-container">
+        <div class="buttons-wrapper">
+            <a id="pause-resume-button" class="play-button">Start</a>
+            <a id="reset-button" class="play-button">Reset</a>
+            <a id="config-button" class="play-button">Config</a>
+        </div>
+    </div>
+
+
+    <div id="seed-div">
+        <input type="text" id="seed-input" placeholder="Seed" pattern="[0-9]*"
+            oninput="this.value = this.value.replace(/[^0-9]/g, '');" /><br>
+        <span id="seed"></span>
+    </div>
+
+    <!-- <div id="radarMap"></div> -->
+
+    <div id="config-container" style="display: none;">
+        <div id="import-export-buttons">
+            <div class="buttons-container">
+                <div class="button-outer">
+                    <div class="button-config">
+                        <input type="file" id="import-file" onchange="importConfig()" name="">Import
+                    </div>
+                </div>
+                <div class="button-outer" id="export-file">
+                    <div class="button-config"> Export </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div id="config-inputs"></div>
+        </div>
+    </div>
+
+    <div id="tree-container">
+        <h2>Genealogical Tree</h2>
+        <div id="tree"></div>
+        <button id="reset-tree-button">Reset Tree</button>
+
+
+    </div>
+    <div id="deathChart"></div>
+    <div id="chart"></div>
+
+
+    <div class="overlay" id="overlay">
+        <div class="centered-div">
+            <div id="typed-keys"></div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://d3js.org/d3-zoom.v2.min.js"></script>
+    <script src="https://d3js.org/d3-drag.v2.min.js"></script>
+
+
+
+
+    <script src="./script.js"></script>
+    <!-- <script src="./tests.js"></script> -->
+</body>
+
+</html>

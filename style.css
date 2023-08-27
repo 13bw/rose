@@ -1,0 +1,370 @@
+:root {
+	--background: #1f1a33;
+	--primary: #6f3ff5;
+	--secondary: #c85afc;
+	--accent: #c7a1ff;
+	--text: #ffffff;
+	--shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+html,
+body {
+	color: var(--text);
+	height: 100%;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	background-color: var(--background);
+}
+
+h1 {
+	width: 100%;
+}
+
+#canvas-container {
+	width: 600px;
+	height: 600px;
+	position: relative;
+	overflow: hidden;
+	box-shadow: var(--shadow);
+}
+
+#canvas {
+	width: 100%;
+	height: 100%;
+	display: block;
+	border: none;
+	outline: none;
+}
+
+canvas {
+	cursor: grab;
+}
+
+canvas:active {
+	cursor: grabbing;
+}
+
+#entity-info {
+	position: absolute;
+	background-color: #1f1a3390;
+	padding: 20px;
+	border-radius: 8px;
+	color: var(--text);
+	font-size: 16px;
+	box-shadow: var(--shadow);
+	top: 70px;
+	margin-left: 400px;
+	display: none;
+
+}
+
+#entity-info p {
+	margin: 4px 0;
+}
+
+
+#info {
+	display: block;
+	position: absolute;
+	top: 60px;
+	margin-left: 640px;
+	cursor: default;
+
+}
+
+#info i {
+	font-size: 20px;
+}
+
+
+
+#info-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
+#info-container p {
+	margin: 4px;
+}
+
+#seed-div {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#seed-div input {
+	padding: 8px;
+	border: none;
+	border-radius: 4px;
+	width: 200px;
+	background-color: var(--background);
+	color: var(--text);
+	box-shadow: var(--shadow);
+}
+
+#seed-div span {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.play-button {
+	display: inline-block;
+	background-color: var(--primary);
+	border: none;
+	color: var(--text);
+	border-radius: 24px;
+	width: 150px;
+	height: 48px;
+	font-size: 18px;
+	text-align: center;
+	font-weight: bold;
+	letter-spacing: -1px;
+	line-height: 44px;
+	text-decoration: none;
+	margin: 3px;
+	margin-top: 10px;
+	cursor: pointer;
+	box-shadow: var(--shadow);
+}
+
+.play-button:active {
+	background-color: var(--accent);
+}
+
+.buttons-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#config-container {
+	margin-top: 30px;
+	width: 100%;
+}
+
+.buttons-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+
+#import-export-buttons {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-top: 20px;
+}
+
+#buttons-container {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.button-outer {
+	background-color: var(--primary);
+	color: var(--text);
+	border: none;
+	width: 100px;
+	height: 35px;
+	margin: 3px;
+	border-radius: 4px;
+	transition: all 0.2s ease;
+	outline: none;
+	cursor: pointer;
+	display: inline-block;
+	text-align: center;
+	line-height: 35px;
+	font-size: 16px;
+	box-shadow: var(--shadow);
+}
+
+.button-config {
+	color: var(--text);
+	text-align: center;
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.button-config input {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	opacity: 0;
+}
+
+.button-outer:hover {
+	background-color: var(--accent);
+}
+
+.center-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.grid-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	max-width: 900px;
+	padding: 20px;
+	border: 1px solid var(--accent);
+	border-radius: 5px;
+}
+
+.grid-item {
+	flex-basis: calc(33.33% - 10px);
+	padding: 5px;
+}
+
+.config-category {
+	font-weight: bold;
+}
+
+#config-inputs label {
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+#config-inputs input {
+	padding: 8px;
+	border: none;
+	border-radius: 4px;
+	margin-bottom: 10px;
+	width: 200px;
+	background-color: var(--background);
+	color: var(--text);
+	box-shadow: var(--shadow);
+}
+
+#info-label {
+	position: fixed;
+	display: none;
+	z-index: 999;
+	background-color: var(--background);
+	padding: 20px;
+	border-radius: 8px;
+	color: var(--text);
+	font-size: 16px;
+	box-shadow: var(--shadow);
+	width: 350px;
+}
+
+#plot-container {
+	margin: 30px;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: none;
+}
+
+.centered-div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px;
+	text-align: center;
+	font-size: 100px;
+	font-weight: 900;
+}
+
+#tree {
+	border: 1px solid var(--accent);
+}
+
+.node circle {
+	stroke: steelblue;
+	stroke-width: 2px;
+}
+
+.node text {
+	fill: white;
+}
+
+.link {
+	fill: none;
+	stroke: #ccc;
+	stroke-width: 2px;
+}
+
+
+svg {
+	cursor: grab;
+}
+
+svg:active {
+	cursor: grabbing;
+}
+
+
+#tree-container {
+	margin-bottom: 30px;
+	margin-top: 30px;
+	display: none;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#tree-container h2 {
+	text-align: center;
+}
+
+#reset-tree-button {
+	background-color: var(--primary);
+	color: var(--text);
+	border: none;
+	width: 100px;
+	height: 35px;
+	margin: 3px;
+	border-radius: 4px;
+	transition: all 0.2s ease;
+	outline: none;
+	cursor: pointer;
+	display: inline-block;
+	text-align: center;
+	line-height: 35px;
+	font-size: 16px;
+	box-shadow: var(--shadow);
+	margin-top: 10px;
+}
+
+#reset-tree-button:hover {
+	background-color: var(--accent);
+}
